@@ -55,22 +55,26 @@ const students = [
 
 //Створіть функцію яка приймає массив оброблює його map  та повертає новий масив де є імя та середній бал студента
 
-function studentGrades(){
-    let newStudArr = students.map(value =>{
+function studentGrades(arr){
+    let newStudArr = arr.map(value =>{
         const avrgGrade = (value.scores.math+value.scores.english+value.scores.science)/3;
         return {name: value.name, avrgGrade: avrgGrade};
     });
     return newStudArr;
 };
 
-let result = studentGrades();
+let result = studentGrades(students);
 console.log(result);
+
 
 //Відфільтруйте студентів за допомогою filter в яких середній бал вище 80 балів
 
 let filterStudents = result.filter((student)=>student.avrgGrade > 80);
 
 console.log(filterStudents);
+
+
+
 //========================================
 
 const transactions = [
@@ -118,14 +122,14 @@ console.log('Total expense Info:', totalExpense);
 
 let numberArr = [2, 8, 20, 47, 15, 7, 3, 100, 37];
 
-function filterNumber(){
-    let bigNumbers = numberArr.filter(num=> num > 10);
+function filterNumber(arr){
+    let bigNumbers = arr.filter(num=> num > 10);
     console.log(bigNumbers);
     let resultNumbers = bigNumbers.slice(0, 3);
     return resultNumbers;
 }
 
-let resultNum = filterNumber();
+let resultNum = filterNumber(numberArr);
 console.log(resultNum);
 
 //Створіть функцію, яка приймає масив і два індекси, і повертає новий масив, що містить елементи між цими індексами, у зворотньому порядку.
