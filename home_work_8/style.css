@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header-main{
+    background-color: aqua;
+    height: 20vh;
+}
+
+.main-content{
+    background-color: bisque;
+    height: 80vh;
+}
+
+.list-conteiner{
+    background-color: coral;
+
+}
+
+p{
+    margin-bottom: 2em;
+}
+
+div{
+    padding: 2em;
+}

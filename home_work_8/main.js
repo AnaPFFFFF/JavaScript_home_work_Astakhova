@@ -4,12 +4,12 @@
 let firstArr = [25, true, 'Hello', 198,];
 let secondtArr = [89, false, 'World', 2,65,];
 
-function spreadArrs (arr1, arr2){
+function uniteArrs (arr1, arr2){
     let newArr = [...arr1, ...arr2];
     return newArr;
 }
 
-let result = spreadArrs(firstArr, secondtArr);
+let result = uniteArrs(firstArr, secondtArr);
 console.log(result);
 
 // Тема: Rest
@@ -46,6 +46,9 @@ function typeofInfo (argument){
 console.log(typeofInfo(false));
 console.log(typeofInfo(125));
 console.log(typeofInfo('Hellow World'));
+console.log(typeofInfo(null));
+console.log(typeofInfo([1, 2]));
+console.log(typeofInfo(typeofInfo));
 
 // Напишіть функцію, яка перевіряє тип змінної та виводить повідомлення "Це число", "Це рядок" або "Це інший тип", використовуючи оператор typeof.
 
@@ -60,21 +63,22 @@ function typeCheck (value){
     }
 }
 
+typeCheck(true);
 typeCheck(258);
 typeCheck('Hellow');
-typeCheck(true);
+typeCheck([1, 2]);
 
 // Створіть функцію, яка повертає рік народження користувача коли користувач вводить свій вік
 // Виведіть результат у консоль.
 
-function getBirthYear (){
+/*function getBirthYear (){
     let todayDate = new Date();
     let userAge = prompt("Введіть свій вік:");
     let birthYear = todayDate.getFullYear() - userAge ;
     console.log(`Рік народження: ${birthYear}`);
 }
 
-getBirthYear();
+getBirthYear();*/
 
 // Завдання для Date.toLocaleString:
 
@@ -101,18 +105,61 @@ console.log(fruitsArr.map(fruit=> fruit.toUpperCase()));
 
 // Виберіть ці елементи за допомогою 
 // getElementById
+
+let headObj = document.getElementById('header');
+console.log(headObj);
+
 // getElementsByClassName
+
+let secObj = document.getElementsByClassName('main-content');
+console.log(secObj);
+
 // getElementsByTagName
 
+let divObj = document.getElementsByTagName('div');
+console.log(divObj);
+
 // створіть список ul з 5 елементами li всередині.
+
+let div = document.getElementsByClassName('list-conteiner')[0];
+let ul = document.createElement('ul');
+for(let i=0; i<5; i++){
+    let li = document.createElement('li');
+    li.textContent = 'Some text' + (i+1);
+    ul.appendChild(li);
+}
+div.appendChild(ul);
+
 // За допомогою querySelector виберіть:
 // - перший елемент списку
+
+let firstElem = document.querySelector('div ul li');
+console.log(firstElem);
+
 // - останній елемент списку
-// - 3 елемент списку
+
+let lastElem = document.querySelector('div ul li:last-child');
+console.log(lastElem);
+
+// - 3 елемент  списку
+
+let thirdElem = document.querySelector('div ul li:nth-last-child(3)');
+console.log(thirdElem);
+
 // За допомогою querySelectorAll
 // - всі елементи li в списку
+
+let allLiElements = document.querySelectorAll('div ul li');
+console.log(allLiElements);
+
 // - конвертуйте вибрані елменти в массив
 
+let [...allLiArr] = document.querySelectorAll('div ul li');
+console.log(allLiArr);
+
 // Створіть на сторінці елемент який вибирається ціми селекторами
-// // let listItems = document.querySelectorAll('ul.nav > li');
-// // let listItem = document.querySelectorAll('li:nth-child(2)');
+let listItems = document.querySelectorAll('ul.nav > li');
+console.log(listItems);
+
+let listItem = document.querySelectorAll('li:nth-child(2)');
+console.log(listItem);
