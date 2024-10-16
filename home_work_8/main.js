@@ -71,14 +71,14 @@ typeCheck([1, 2]);
 // Створіть функцію, яка повертає рік народження користувача коли користувач вводить свій вік
 // Виведіть результат у консоль.
 
-/*function getBirthYear (){
+function getBirthYear (){
     let todayDate = new Date();
     let userAge = prompt("Введіть свій вік:");
     let birthYear = todayDate.getFullYear() - userAge ;
     console.log(`Рік народження: ${birthYear}`);
 }
 
-getBirthYear();*/
+getBirthYear();
 
 // Завдання для Date.toLocaleString:
 
