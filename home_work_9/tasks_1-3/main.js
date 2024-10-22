@@ -35,6 +35,29 @@ const booksArray = [
     }
 ];
 
+let bookTable = document.querySelector('table');
+let tbodyEl = document.createElement('tbody');
+bookTable.appendChild(tbodyEl);
+
+
+booksArray.forEach(book=>{
+    let row = document.createElement('tr');
+
+    let titleInfo = document.createElement('td');
+    let yearInfo = document.createElement('td');
+    let ratingInfo = document.createElement('td');
+
+    titleInfo.textContent = book.title;
+    yearInfo.textContent = book.year;
+    ratingInfo.textContent = book.rating;
+
+    row.appendChild(titleInfo);
+    row.appendChild(yearInfo);
+    row.appendChild(ratingInfo);
+
+    tbodyEl.appendChild(row);
+})
+
 
 
 //  3)   Створіть HTML-сторінку з контейнером, в який будуть додаватися елементи за допомогою JavaScript.
@@ -44,26 +67,24 @@ const booksArray = [
     { tag: 'span', text: 'Елемент 3' }
 ];
 // Створіть функцію, яка приймає об'єкт і створює новий елемент з використанням document.createElement, встановлює текст елемента та повертає його в контейнер.
+
+function creatNewElement (arr){
+    let newElement = document.createElement(arr.tag);
+    newElement.textContent= arr.text;
+    return newElement;
+}
+
 // Пройдіть циклом по масив і для кожного обєкту застосуйте створену функцію
 
+let newConteiner = document.querySelector('.elements-container');
 
-// 4) Створіть сторінку та підключіть до неї js
-// 4.1) За допомогою js  створіть на сторінці елемент header  та задайте padding 50px та background-color жовтого кольору і властивість text-align center
-// 4.2) const menuData = [
-//     { name: 'Головна', url: '/' },
-//     { name: 'Про нас', url: '/about' },
-//     { name: 'Послуги', url: '/services' },
-//     // Додайте ще пункти меню за потреби
-// ];
-// Створіть в хедері А теги з значенням з обєкта name  встановленим значенням в href з url.
-// 4.3) Додайте тегам А що створені в header  атрибут target з властивістю _blank
+elementsArray.forEach(data => {
+    let newElement = creatNewElement(data);
+    newConteiner.appendChild(newElement);
+});
 
-// 4.4)Створіть блок за допомогою js задайте блоку стиль display flex та в середині цього блоку створіть 50 div блоків з правилом border-radius, width 50px height 50px та background-color
 
-// 4.5) доадайте всім стврореним 50 div елементам класс circle-elemt
-
-// Додаткове завдання:
-// спробуйте зробити  завдання 4.5 так щоб в кожного div елемента був унікальний бекграунд
+// Додаткове завдання: (ДОРОБЛЮ!!! НЕВСТИГАЮ )
 
 // - Виведіть на сторінці нетфікс рейтинг за допомогою js
 // - Виведіть жанри за допомогою js
