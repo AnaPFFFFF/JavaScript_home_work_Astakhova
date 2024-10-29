@@ -1,0 +1,67 @@
+
+
+section{
+    margin: 100px;
+}
+.mouse{
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    border: 3px solid green;
+    margin: 50px auto;
+    background-color: blueviolet;
+}
+
+
+/* Завдання 'onContextMenu' */
+
+.text-info{
+    margin: 50px 200px;
+}    
+
+.dropdown {
+position: absolute;
+display: none;
+background-color: aliceblue;
+border: 1px solid black;
+z-index: 1000;
+padding: 10px;
+width: 150px;
+}
+
+.dropdown-menu {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.dropdown-menu li a {
+text-decoration: none;
+color: green;
+display: block;
+padding: 10px;
+}
+
+.hiden{
+    display: none;
+}
+
+/* playground */
+
+.playground{
+    position: relative;
+    background-color: aquamarine;
+    width: 250px;
+    height: 250px;
+    border: solid 2px black;
+    margin: 0 auto;
+}
+
+.move-element{
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+}
+
