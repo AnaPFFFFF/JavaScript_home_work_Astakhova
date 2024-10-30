@@ -129,6 +129,34 @@ document.querySelector('.count').addEventListener('click', convertCurrency);
 // Кожна додана задача повинна з'являтися на сторінці у вигляді списку.
 // Додайте можливість видалення задачі зі списку.
 
+// Получаем элементы
+let formEl = document.querySelector('form');
+let inputEl = document.querySelector('#taskInput');
+let listEl = document.querySelector('#taskList');
+let deleteButton = document.querySelector('.delete-task')
+
+
+function addTask(e) {
+    e.preventDefault();
+    let taskText = inputEl.value.trim();
+    if (taskText === "") return;
+
+    let taskItem = document.createElement('li');
+    taskItem.textContent = taskText;
+
+    listEl.appendChild(taskItem);
+    inputEl.value = "";
+}
+deleteButton.addEventListener('click', function() {
+    let lastTask = listEl.lastElementChild;
+    if (lastTask) {
+        lastTask.remove();
+    }
+
+});
+
+formEl.addEventListener('submit', addTask);
+
 
 
 
