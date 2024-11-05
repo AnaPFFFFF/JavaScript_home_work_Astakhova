@@ -1,0 +1,16 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 20%;
+}
+
+.message-email {
+    font-size: 13px;
+    color: red;
+}
+
+.message-password {
+    font-size: 13px;
+    color: red;
+}
